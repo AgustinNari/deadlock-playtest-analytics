@@ -1,42 +1,59 @@
 # Deadlock Playtest Analytics
 
-Prototipo local de dashboard analítico para explorar métricas simuladas de un playtest competitivo. El proyecto representa cómo un Data Warehouse puede alimentar indicadores de balance, rendimiento técnico, experiencia de jugadores y modelos predictivos.
+Local analytics dashboard prototype for exploring simulated competitive playtest data.
 
-## Objetivo
+The project demonstrates how a Data Warehouse-style model can support indicators related to game balance, technical performance, player experience, retention, and predictive analysis.
 
-Centralizar métricas simuladas del playtest y ofrecer una vista analítica sobre:
+## Objective
 
-- balance de héroes;
-- rendimiento en partida;
-- estabilidad técnica;
-- feedback y retención;
-- predicción de abandono y retorno.
+Provide an analytical view of simulated playtest metrics related to:
 
-## Stack
+- hero balance
+- match performance
+- technical stability
+- player feedback
+- retention
+- abandonment and return probability
+
+## Tech Stack
 
 - React
-- Vite
 - TypeScript
+- Vite
 - Recharts
-- CSS propio
-- Datos simulados locales
+- Custom CSS
+- Local simulated datasets
 
-## Datos simulados
+## Simulated Data
 
-El proyecto no utiliza datos reales. Los datasets locales simulan partidas, eventos de gameplay, errores técnicos, feedback, versiones del juego, regiones, mapas, héroes y perfiles de jugadores.
+The project does not use real player data.
 
-No existe conexión con un backend, servicios externos ni APIs. Los datos no representan información oficial de Valve o Deadlock.
+Local datasets simulate:
 
-## Modelo analítico representado
+- matches
+- gameplay events
+- technical errors
+- player feedback
+- game versions
+- regions
+- maps
+- heroes
+- player profiles
 
-Facts:
+The data is not official Valve or Deadlock information.
+
+The project does not connect to a backend, external service, or external API.
+
+## Analytical Model
+
+### Facts
 
 - `Fact_PartidaJugador`
 - `Fact_EventoGameplay`
 - `Fact_ErrorTecnico`
 - `Fact_Feedback`
 
-Dimensiones:
+### Dimensions
 
 - `Dim_Jugador`
 - `Dim_Personaje`
@@ -49,27 +66,35 @@ Dimensiones:
 - `Dim_CategoriaFeedback`
 - `Dim_Region`
 
-En el modelo dimensional, los héroes del juego se representan mediante `Dim_Personaje`. Las builds se reconstruyen desde eventos de compra en `Fact_EventoGameplay` vinculados a `Dim_Objeto`.
+Heroes are represented through `Dim_Personaje`.
 
-## Funcionalidades
+Item builds are reconstructed from purchase events stored in `Fact_EventoGameplay` and linked to `Dim_Objeto`.
 
-- Filtros interactivos por versión, región, mapa, rango competitivo (ELO/MMR) y período.
-- KPIs de tasa de victoria (winrate), abandono por héroe, brecha ganador/perdedor, tasa de crashes, FPS, satisfacción e intención / retención estimada.
-- Badges de Riesgo de balance, Riesgo técnico, Riesgo de retención y Estable.
-- Gráficos y ranking de balance de héroes.
-- Métricas de duración, abandono y eventos por fase de partida.
-- Análisis de errores técnicos, FPS y latencia.
-- Distribución de feedback y señales de retención.
-- Vista predictiva / Data Mining simulada para abandono y retorno al siguiente playtest.
+## Features
 
-## Cómo ejecutar
+- Interactive filters by version, region, map, competitive range, and period
+- Win-rate and abandonment KPIs
+- Winner/loser performance gap
+- Crash-rate, FPS, and latency analysis
+- Player satisfaction and estimated retention metrics
+- Balance, technical, and retention risk indicators
+- Hero balance rankings and charts
+- Match-duration and gameplay-phase analysis
+- Feedback distribution
+- Simulated predictive views for abandonment and return probability
+
+## Running Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Vite mostrará la URL local de desarrollo, normalmente `http://localhost:5173`.
+Vite will display the local development URL, usually:
+
+```text
+http://localhost:5173
+```
 
 ## Build
 
@@ -77,8 +102,10 @@ Vite mostrará la URL local de desarrollo, normalmente `http://localhost:5173`.
 npm run build
 ```
 
-La versión de producción se genera en `dist`. Recharts puede producir una advertencia no bloqueante por el tamaño del bundle durante el build.
+The production bundle is generated in `dist/`.
 
-## Alcance
+## Scope
 
-Este proyecto es un prototipo analítico local con datos simulados. Su alcance se limita a la exploración visual de métricas de playtest y no representa una herramienta oficial de Valve o Deadlock.
+This repository is a local analytics prototype built around simulated playtest data.
+
+It is not an official Valve or Deadlock tool and does not represent official game data.
