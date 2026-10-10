@@ -83,6 +83,29 @@ Item builds are reconstructed from purchase events stored in `Fact_EventoGamepla
 - Feedback distribution
 - Simulated predictive views for abandonment and return probability
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><strong>Dashboard Overview</strong></td>
+    <td align="center"><strong>Hero Balance</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/overview.webp"><img src="docs/screenshots/overview.webp" width="450" alt="Dashboard overview with filters, performance KPIs and dimensional model"></a></td>
+    <td align="center"><a href="docs/screenshots/hero-balance.webp"><img src="docs/screenshots/hero-balance.webp" width="450" alt="Hero win rates, pick rates and comparative ranking"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Match Performance</strong></td>
+    <td align="center"><strong>Player Insights</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/match-performance.webp"><img src="docs/screenshots/match-performance.webp" width="450" alt="Match performance charts and gameplay phase heatmap"></a></td>
+    <td align="center"><a href="docs/screenshots/player-insights.webp"><img src="docs/screenshots/player-insights.webp" width="450" alt="Player feedback, estimated retention and simulated predictive insights"></a></td>
+  </tr>
+</table>
+
+Screenshots show locally simulated playtest data, not official game telemetry.
+
 ## Running Locally
 
 ```bash
